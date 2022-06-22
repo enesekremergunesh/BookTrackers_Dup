@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- css import -->
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/layout/grid/" />
+  <link rel="preconnect" href="https://AK7KMZKZHQ-dsn.algolia.net" crossorigin />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+
+  <link href="./css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+  <link href="./css/docs.css" rel="stylesheet" />
+  <!-- css import -->
+
+
+  <title>Books</title>
+
+  <style>
+    .error {
+      color: red;
+    }
+
+    .book_container {
+      position: relative;
+      width: 100%;
+      padding-top: 140%;
+      /* 16:9 Aspect Ratio */
+    }
+
+    .book_media {
+      position: absolute;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BookTrackers</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Body-Main -->
+  <main>
+    <!-- Main-Top space -->
+    <div name="space" style="height: 4rem"></div>
+
+    <!-- Main-Add -->
+    <div class="container my-4">
+      <div class="row">
+        <div class="col">
+          <div class="d-grid gap-2">
+            <!-- Add-Button -->
+            <button class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#addBookModal">
+              Add Book
+            </button>
+            <!-- Add-Button -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: Main-Add -->
+
+
+    <!-- Main-Item Container -->
+    <div class="container marketing">
+      <!-- Item Container-Item row -->
+      <div id="item_row" class="row">
+
+        <!-- Loading Spinner -->
+        <div class="d-flex justify-content-center text-primary">
+          <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+        <!-- End: Loading Spinner -->
+
+        <!-- Item -->
+        <!-- <div class="col-6 col-md-4 col-lg-3 col-xxl-2">
+          <div class="card border-primary mb-3">
+            <div class="book_container">
+              <img src="https://img.kitapyurdu.com/v1/getImage/fn:1013295/wh:true/wi:800"
+                class="card-img-top book_media" alt="wallpaper" style="width: 100%; height: 100%;" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <div class="row" style="padding-bottom: 10px;">
+                <time datetime="1914-12-20 08:00" style="font-size: 10px; text-align: right">1 DAY AGO</time>
+              </div>
+              <div class="btn-group" role="group" aria-label="Basic outlined example" style="width: 100%">
+                <button type="button" class="btn btn-outline-primary">
+                  Edit
+                </button>
+                <button type="button" class="btn btn-outline-danger">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- End: Item -->
+
+      </div>
+      <!-- End: Item Container-Item row -->
+    </div>
+    <!-- End: Main-Item Container -->
+  </main>
+  <!-- End: Body-Main -->
+
+</body>
+
+<!-- Body-Add Book Modal -->
+<div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal-Form -->
+      <form id="addBookForm">
+
+        <!-- Modal-Header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="addBookModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- End: Modal-Header -->
+
+        <!-- Modal-Body -->
+        <div class="modal-body">
+          <!-- name -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Book Title</label> -->
+            <input name="name" type="text" class="form-control required" placeholder="Book Title"
+              id="input_name_add" />
+          </div>
+          <!-- author_id -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Author ID</label> -->
+            <input name="author_id" type="number" class="form-control required" placeholder="Author ID"
+              id="input_author_id_add" />
+          </div>
+          <!-- language -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Book Language</label> -->
+            <input name="language" type="text" class="form-control required" placeholder="Book Language"
+              id="input_language_add" />
+          </div>
+          <!-- cover -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Cover Source</label> -->
+            <input name="cover" type="text" class="form-control" placeholder="Cover Source"
+              id="input_cover_add" />
+          </div>
+          <!-- source -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Source</label> -->
+            <input name="source" type="text" class="form-control" placeholder="Book Source"
+              id="input_source_add" />
+          </div>
+          <!-- release_date -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Release Date</label> -->
+            <input name="release_date" type="date" class="form-control" placeholder="Release Date"
+              id="input_release_date_add" />
+          </div>
+
+        </div>
+        <!-- End: Modal-Body -->
+
+        <!-- Modal-Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button id="addBookForm_submitButton" type="submit" class="btn btn-primary">
+            Save changes
+          </button>
+        </div>
+        <!-- End: Modal-Footer -->
+
+      </form>
+      <!-- End: Modal-Form -->
+
+    </div>
+  </div>
+</div>
+<!-- End: Body-Add Book Modal -->
+
+<!-- Body-Edit Book Modal -->
+<div class="modal fade" id="editBookModal" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal-Form -->
+      <form id="editBookForm">
+
+        <!-- Modal-Header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="editBookModalLabel">Edit Book</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- End: Modal-Header -->
+
+        <!-- Modal-Body -->
+        <div class="modal-body">
+          <!-- name -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Book Title</label> -->
+            <input name="name" type="text" class="form-control required" placeholder="Book Title"
+              id="input_name_edit" />
+          </div>
+          <!-- author_id -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Author ID</label> -->
+            <input name="author_id" type="number" class="form-control required" placeholder="Author ID"
+              id="input_author_id_edit" />
+          </div>
+          <!-- language -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Book Language</label> -->
+            <input name="language" type="text" class="form-control required" placeholder="Book Language"
+              id="input_language_edit" />
+          </div>
+          <!-- Cover_Source -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Cover Source</label> -->
+            <input name="cover" type="text" class="form-control" placeholder="Cover Source"
+              id="input_cover_edit" />
+          </div>
+          <!-- Book_Source -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Cover Source</label> -->
+            <input name="source" type="text" class="form-control" placeholder="Book Source"
+              id="input_source_edit" />
+          </div>
+          <!-- release_date -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Release Date</label> -->
+            <input name="release_date" type="date" class="form-control" placeholder="Release Date"
+              id="input_release_date_edit" />
+          </div>
+
+        </div>
+        <!-- End: Modal-Body -->
+
+        <!-- Modal-Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button id="editBookForm_submitButton" type="submit" class="btn btn-primary">
+            Save changes
+          </button>
+        </div>
+        <!-- End: Modal-Footer -->
+
+      </form>
+      <!-- End: Modal-Form -->
+
+    </div>
+  </div>
+</div>
+<!-- End: Body-Edit Book Modal -->
+
+
+<!-- Scripts -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/book-service.js"></script>
+<script> BookService.init(); </script>
+<script>
+  //Tooltip 
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<!-- Scripts -->
+
+</html>
