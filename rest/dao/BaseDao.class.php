@@ -79,7 +79,11 @@ class BaseDao{
     $stmt->execute($entity);
     return $entity;
   }
-
+  protected function query_no_param($query){
+    $stmt = $this->conn->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
   protected function query($query, $params){
     $stmt = $this->conn->prepare($query);
     $stmt->execute($params);

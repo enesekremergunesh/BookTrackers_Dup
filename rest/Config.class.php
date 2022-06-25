@@ -6,13 +6,13 @@ class Config {
     return Config::get_env("DB_HOST", "localhost");
   }
   public static function DB_USERNAME(){
-    return Config::get_env("DB_USERNAME", "todo");
+    return Config::get_env("DB_USERNAME", "root");
   }
   public static function DB_PASSWORD(){
-    return Config::get_env("DB_PASSWORD", "todo");
+    return Config::get_env("DB_PASSWORD", "memduh2PRD");
   }
   public static function DB_SCHEME(){
-    return Config::get_env("DB_SCHEME", "todo");
+    return Config::get_env("DB_SCHEME", "defaultdb");
   }
   public static function DB_PORT(){
     return Config::get_env("DB_PORT", "3306");

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- css import -->
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/layout/grid/" />
+  <link rel="preconnect" href="https://AK7KMZKZHQ-dsn.algolia.net" crossorigin />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+
+  <link href="./css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+  <link href="./css/docs.css" rel="stylesheet" />
+  <!-- css import -->
+
+
+  <title>Books</title>
+
+  <style>
+    .error {
+      color: red;
+    }
+
+    .detail_item_col{
+      border-right: solid 5px;
+      border-left: solid 5px;
+      border-color: white;
+      background-color: rgb(200,200,200);
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BookTrackers</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button class="btn btn-primary">Sign in</button>
+          </div>
+          
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Body-Main -->
+  <main>
+    <!-- Main-Top space -->
+    <div name="space" style="height: 4rem"></div>
+
+    <!-- Main-Author Profile -->
+    <section class="text-center container" style="display: none;"><br>
+      <div id="AuthorBody" class="row py-lg-1 align-items-center">
+        <!-- Author-Profile Body -->
+        <div class="col-md-4 mx-auto" aria-hidden="true">
+          <div class="row justify-content-center">
+            <div class="col" style="max-width: 18rem;">
+              <!-- Author-Profile Body -->
+              <svg class="rounded bd-placeholder-img placeholder-wave" width="100%" height="180"
+                xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="15rem" fill="#868e96"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 mx-auto">
+
+          <h1 class="card-title placeholder-wave">
+            <span class="placeholder col-4"></span>
+          </h1>
+          <p class="placeholder-wave">
+            <span class="placeholder col-10 bg-secondary"></span>
+            <span class="placeholder col-11 bg-secondary"></span>
+            <span class="placeholder col-9 bg-secondary"></span>
+          </p>
+        </div>
+        <!-- End: Author-Profile Body -->
+      </div>
+    </section>
+    <!-- End: Main-Author Profile -->
+
+    <!-- Main-Author Profile -->
+    <section class="text-start container"><br>
+      <!-- Picture and name row -->
+      <div id="AuthorBody" class="row py-lg-1 align-items-center justify-content-center">
+        <!-- Picture col -->
+        <div class="col-md-4 text-center" aria-hidden="true">
+          <img src="./rest/docs/assets/2-min.png" alt="avatar" style="width: 100%; max-width: 100px;">
+        </div><!-- End: Picture col -->
+        <!-- Name col -->
+        <div class="text-center col-md-8 mx-auto">
+          <h1 class="card-title">
+            Enes Ekrem Ergunesh
+          </h1>
+          <p class="card-text">
+            enesergunes99#1999
+          </p>
+        </div><!-- End: Name col -->
+      </div><!-- End: Picture and name row -->
+
+      <br>
+
+      <!-- Details row -->
+      <div id="DetailsBody" class="row justify-content-center">
+        <!-- Details item -->
+        <div class="row justify-content-center">
+          <div class="col-md-2 detail_item_col">
+            <p class="fw-bold fs-5 my-1">
+              E-mail
+            </p>
+          </div><!-- End: Name col -->
+          <!-- Data col -->
+          <div class="col-md-8 detail_item_col">
+            <p class="mx-1 my-1">
+              enesergunes99@hotmail.com
+            </p>
+          </div><!-- End: Data col -->
+        </div><!-- End: Details item -->
+      </div><!-- End: Details row -->
+
+
+    </section>
+    <!-- End: Main-Author Profile -->
+
+  </main>
+  <!-- End: Body-Main -->
+
+</body>
+
+<!-- Body-Add Book Modal -->
+<div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal-Form -->
+      <form id="addBookForm">
+
+        <!-- Modal-Header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="addBookModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- End: Modal-Header -->
+
+        <!-- Modal-Body -->
+        <div class="modal-body">
+          <!-- name -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Book Title</label> -->
+            <input name="name" type="text" class="form-control required" placeholder="Book Title" id="input_name_add" />
+          </div>
+          <!-- author_id -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Author ID</label> -->
+            <input name="author_id" type="number" class="form-control required" placeholder="Author ID"
+              id="input_author_id_add" />
+          </div>
+          <!-- language -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Book Language</label> -->
+            <input name="language" type="text" class="form-control required" placeholder="Book Language"
+              id="input_language_add" />
+          </div>
+          <!-- cover -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Cover Source</label> -->
+            <input name="cover" type="text" class="form-control" placeholder="Cover Source" id="input_cover_add" />
+          </div>
+          <!-- source -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Source</label> -->
+            <input name="source" type="text" class="form-control" placeholder="Book Source" id="input_source_add" />
+          </div>
+          <!-- release_date -->
+          <div class="form-group">
+            <!-- <label for="inputTitle" class="form-label">Release Date</label> -->
+            <input name="release_date" type="date" class="form-control" placeholder="Release Date"
+              id="input_release_date_add" />
+          </div>
+
+        </div>
+        <!-- End: Modal-Body -->
+
+        <!-- Modal-Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button id="addBookForm_submitButton" type="submit" class="btn btn-primary">
+            Save changes
+          </button>
+        </div>
+        <!-- End: Modal-Footer -->
+
+      </form>
+      <!-- End: Modal-Form -->
+
+    </div>
+  </div>
+</div>
+<!-- End: Body-Add Book Modal -->
+
+<!-- Scripts -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/book-service.js"></script>
+<!-- <script> BookService.init(); </script> -->
+<script>
+  //Tooltip 
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<!-- Scripts -->
+
+</html>
